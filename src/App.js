@@ -1,4 +1,7 @@
 import React from 'react';
+import TodoForm from './components/TodoComponents/TodoForm';
+import TodoList from './components/TodoComponents/TodoList';
+import '../src/components/TodoComponents/Todo.css'
 
 class App extends React.Component {
   // you will need a place to store your state in this component.
@@ -13,10 +16,59 @@ class App extends React.Component {
       id: Date.now()
     }
   }
+
+  handleChange = e => {
+    this.setState({
+    [e.target.name]:e.target.value
+  })
+  }
+
+  lineThrough = id => {
+    this.setState({
+      tasks:this.state.tasks.map(task => {
+        if(task.id === id) {
+          return ({...task, completed: !task.completed})
+        }
+        else {
+          return task
+        }
+      })
+    })
+  }
+
+handleClear = e => {
+  e.preventDefault();
+  this.setState({
+    clearOnState: [...this.state.clearOnState, this.state.TodoList]
+})
+}
+
+ addTask = e => {
+   e.preventDefault()
+   this.setState({
+     tasks: [...this.state.tasks, {task: this.state.inputText,
+    id: Date.now(),
+    completed: false}],
+    inputText: ''
+ })
+ }
+
+ clearComplete = (e) => {
+  e.preventDefault();
+  this.setState({
+    tasks: this.state.tasks.filter(task => task.completed === false)
+  })
+ };
+
+
   render() {
     return (
-      <div>
+      <div className='App'>
         <h2>Welcome to your Todo App!</h2>
+        <TodoForm inputText={this.state.inputText} handleChange={this.handleChange}
+        clearComplete={this.clearComplete} addTask={this.addTask}
+        />
+        <TodoList todo={this.state.tasks} lineThrough={this.lineThrough}></TodoList>
       </div>
     );
   }

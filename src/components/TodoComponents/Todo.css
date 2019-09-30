@@ -1,0 +1,74 @@
+.App {
+    text-align: center;
+    border: 1px solid black;
+    width: 500px;
+    height: 700px;
+    margin: auto;
+    background: #DE3A1F;
+    color: white;
+    text-shadow: 1px 1px black;
+}
+
+p {
+    margin: 0
+}
+
+.list {
+    border: 2px solid #DE3A1F;
+    height: 40px;
+    width: 480px;
+    font-size: 30px;
+    margin: 0;
+    cursor: pointer;
+}
+
+.list.true {
+ text-decoration: line-through;
+}
+
+.list.false {
+    text-decoration: none;
+   }
+
+.form-input {
+    height: 30px;
+    width: 400px;
+    font-size: 25px;
+    text-align: center;
+    border: 2px solid #DE3A1F;
+    border-bottom: 1px solid white;
+    margin-top: 30px;
+    background: #DE3A1F;
+    color: white;
+    outline: none;
+}
+
+.form-input::placeholder {
+    color: white;
+    text-shadow: 1px 1px black;
+}
+
+button {
+    height: 36px;
+    width: 240px;
+    font-size: 20px;
+    border: 2px solid #DE3A1F;
+    cursor: pointer;
+    outline: none;
+    background: #DE3A1F;
+    color: white;
+    text-shadow: 1px 1px black;
+}
+
+.form-section {
+    /* border: 1px solid black; */
+    height: 135px;
+    width: 480px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.buttons-div {
+    display: flex;
+}
