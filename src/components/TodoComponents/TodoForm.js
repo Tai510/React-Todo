@@ -2,20 +2,15 @@ import React from 'react';
 
 function TodoForms({inputText,handleChange,clearComplete,addTask}) {
   return (
-  <form className='form-section'>
-   <div>
-     <input className="form-input" placeholder="Add Item" type="text" name="inputText"
+  <form autocomplete="off" className='form-section'>
+        <h3>Add Item</h3>
+   <div className='input-section'>
+     <input className="form-input"  type="text" name="inputText"
      value={inputText} onChange={handleChange}/>
-   </div>
-   <div className='buttons-div'>
-     <div>
-     <button onClick={addTask}>Add Todo</button>
-     </div>
-     <div>
-     <button onClick={clearComplete}>Clear Completed</button>
-     </div>
-    </div> {/* buttons-div end */}
-     
+     <i onClick={addTask} class="fas fa-plus-circle"></i>
+     <i onClick={clearComplete} class="fas fa-check-circle"></i>
+     {/* <button>Add</button> */}
+   </div>  
   </form>
   )
 }

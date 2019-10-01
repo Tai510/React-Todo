@@ -54,10 +54,15 @@ class App extends React.Component {
  };
 
 
+
+
   render() {
     return (
       <div className='App'>
-        <h2>Welcome to your Todo App!</h2>
+      <div className='header'>
+        <h2>ToDo List</h2>
+        <i class="fas fa-pen"></i>
+      </div>
         <TodoForm inputText={this.state.inputText} handleChange={this.handleChange}
         clearComplete={this.clearComplete} addTask={this.addTask}
         />
