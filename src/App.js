@@ -36,13 +36,6 @@ class App extends React.Component {
     })
   }
 
-handleClear = e => {
-  e.preventDefault();
-  this.setState({
-    clearOnState: [...this.state.clearOnState, this.state.TodoList]
-})
-}
-
  addTask = e => {
    e.preventDefault()
    this.setState({
