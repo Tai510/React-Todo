@@ -42,7 +42,7 @@ class App extends React.Component {
      tasks: [...this.state.tasks, {task: this.state.inputText,
     id: Date.now(),
     completed: false}],
-    inputText: ''
+    inputText: '',
  })
  }
 
@@ -58,16 +58,17 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className='App'>
+  <div className='App'>
       <div className='header'>
         <h2>ToDo List</h2>
-        <i class="fas fa-pen"></i>
+        <i class="fas fa-clipboard-check"></i>
       </div>
         <TodoForm inputText={this.state.inputText} handleChange={this.handleChange}
         clearComplete={this.clearComplete} addTask={this.addTask}
         />
         <TodoList todo={this.state.tasks} lineThrough={this.lineThrough}></TodoList>
-      </div>
+
+  </div> /* App end */
     );
   }
 }
